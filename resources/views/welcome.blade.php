@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/default/auth-signin-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 01:03:46 GMT -->
+
 <head>
 
     <meta charset="utf-8" />
@@ -34,7 +36,8 @@
             <div class="bg-overlay"></div>
 
             <div class="shape">
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1440 120">
                     <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
                 </svg>
             </div>
@@ -66,45 +69,65 @@
                                     <h5 class="text-primary">Welcome Back !</h5>
                                     <p class="text-muted">Sign in to continue to Velzon.</p>
                                 </div>
+                                @foreach ($errors->all() as $error)
+                                    <p class="text-danger text-center">{{ $error }}</p>
+                                @endforeach
                                 <div class="p-2 mt-4">
-                                    <form action="https://themesbrand.com/velzon/html/default/index.html">
+                                    <form action="{{ route('login') }}" method="POST">
+                                        @csrf
 
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">Username</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                            <label for="Email" class="form-label">Email</label>
+                                            <input name="email" type="email" class="form-control" id="email"
+                                                placeholder="Enter email">
                                         </div>
 
                                         <div class="mb-3">
                                             <div class="float-end">
-                                                <a href="auth-pass-reset-basic.html" class="text-muted">Forgot password?</a>
+                                                <a href="" class="text-muted">Forgot
+                                                    password?</a>
                                             </div>
                                             <label class="form-label" for="password-input">Password</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
-                                                <input type="password" class="form-control pe-5 password-input" placeholder="Enter password" id="password-input">
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                <input type="password" name="password" class="form-control pe-5 password-input"
+                                                    placeholder="Enter password" id="password-input">
+                                                <button
+                                                    class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                                    type="button" id="password-addon"><i
+                                                        class="ri-eye-fill align-middle"></i></button>
                                             </div>
                                         </div>
 
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
-                                            <label class="form-check-label" for="auth-remember-check">Remember me</label>
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="auth-remember-check">
+                                            <label class="form-check-label" for="auth-remember-check">Remember
+                                                me</label>
                                         </div>
 
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">Sign In</button>
                                         </div>
 
-                                        <div class="mt-4 text-center">
+                                        {{-- <div class="mt-4 text-center">
                                             <div class="signin-other-title">
                                                 <h5 class="fs-13 mb-4 title">Sign In with</h5>
                                             </div>
                                             <div>
-                                                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-primary btn-icon waves-effect waves-light"><i
+                                                        class="ri-facebook-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-danger btn-icon waves-effect waves-light"><i
+                                                        class="ri-google-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-dark btn-icon waves-effect waves-light"><i
+                                                        class="ri-github-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-info btn-icon waves-effect waves-light"><i
+                                                        class="ri-twitter-fill fs-16"></i></button>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </form>
                                 </div>
                             </div>
@@ -113,7 +136,8 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Don't have an account ? <a href="auth-signup-basic.html" class="fw-semibold text-primary text-decoration-underline"> Signup </a> </p>
+                            <p class="mb-0">Don't have an account ? <a href="{{ route('register') }}"
+                                    class="fw-semibold text-primary text-decoration-underline"> Signup </a> </p>
                         </div>
 
                     </div>
@@ -131,7 +155,10 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i>
+                                by Themesbrand
                             </p>
                         </div>
                     </div>
@@ -160,4 +187,5 @@
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/default/auth-signin-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 01:03:47 GMT -->
+
 </html>

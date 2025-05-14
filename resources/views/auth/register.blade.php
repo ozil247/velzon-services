@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
 
 
 <!-- Mirrored from themesbrand.com/velzon/html-2.5.0/default/auth-signup-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 03:03:10 GMT -->
+
 <head>
 
     <meta charset="utf-8" />
@@ -34,7 +36,8 @@
             <div class="bg-overlay"></div>
 
             <div class="shape">
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1440 120">
                     <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
                 </svg>
             </div>
@@ -64,47 +67,102 @@
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
                                     <h5 class="text-primary">Create New Account</h5>
-                                    <p class="text-muted">Get your free velzon account now</p>
+                                    <p class="text-muted">Get free velzon account now</p>
+                                    @foreach ($errors->all() as $error)
+                                        <p class="text-danger text-center">{{ $error }}</p>
+                                    @endforeach
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form class="needs-validation" novalidate action="https://themesbrand.com/velzon/html-2.5.0/default/index.html">
+                                    <form class="needs-validation" novalidate action="{{ route('register') }}"
+                                        method="POST">
+                                        @csrf
 
-                                        <div class="mb-3">
-                                            <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" id="useremail" placeholder="Enter email address" required>
+                                             <div class="mb-3">
+                                            <label for="username" class="form-label">name <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="name"
+                                                placeholder="Enter name" required>
+                                            <div class="invalid-feedback">
+                                                Please enter name
+                                            </div>
+                                        </div>
+
+                                           <div class="mb-3">
+                                            <label for="email" class="form-label">Email <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" name="email"
+                                                placeholder="Enter eamil" required>
                                             <div class="invalid-feedback">
                                                 Please enter email
                                             </div>
                                         </div>
+
+                                       
+                                     
+
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                            <label for="username" class="form-label">Phone Number <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="phone"
+                                                placeholder="Enter Number" required>
                                             <div class="invalid-feedback">
-                                                Please enter username
+                                                Please enter phone number
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Password</label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                                                <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                <input type="password" name="password"
+                                                    class="form-control pe-5 password-input" onpaste="return false"
+                                                    placeholder="Enter password" id="password-input"
+                                                    aria-describedby="passwordInput"
+                                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                <button
+                                                    class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                                    type="button" id="password-addon"><i
+                                                        class="ri-eye-fill align-middle"></i></button>
                                                 <div class="invalid-feedback">
                                                     Please enter password
                                                 </div>
                                             </div>
                                         </div>
 
+                                        <div class="mb-3">
+                                            <label class="form-label" for="password-input">Password</label>
+                                            <div class="position-relative auth-pass-inputgroup">
+                                                <input type="password" name="password_confirmation"
+                                                    class="form-control pe-5 password-input" onpaste="return false"
+                                                    placeholder="comfirm password" id="password-input"
+                                                    aria-describedby="passwordInput"
+                                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                <button
+                                                    class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                                    type="button" id="password-addon"><i
+                                                        class="ri-eye-fill align-middle"></i></button>
+                                                <div class="invalid-feedback">
+                                                    Please comfirm password
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="mb-4">
-                                            <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the Velzon <a href="#" class="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</a></p>
+                                            <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the
+                                                Velzon <a href="#"
+                                                    class="text-primary text-decoration-underline fst-normal fw-medium">Terms
+                                                    of Use</a></p>
                                         </div>
 
                                         <div id="password-contain" class="p-3 bg-light mb-2 rounded">
                                             <h5 class="fs-13">Password must contain:</h5>
-                                            <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
-                                            <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
-                                            <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
-                                            <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                                            <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b>
+                                            </p>
+                                            <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter
+                                                (a-z)</p>
+                                            <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b>
+                                                letter (A-Z)</p>
+                                            <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)
+                                            </p>
                                         </div>
 
                                         <div class="mt-4">
@@ -117,10 +175,18 @@
                                             </div>
 
                                             <div>
-                                                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
-                                                <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-primary btn-icon waves-effect waves-light"><i
+                                                        class="ri-facebook-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-danger btn-icon waves-effect waves-light"><i
+                                                        class="ri-google-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-dark btn-icon waves-effect waves-light"><i
+                                                        class="ri-github-fill fs-16"></i></button>
+                                                <button type="button"
+                                                    class="btn btn-info btn-icon waves-effect waves-light"><i
+                                                        class="ri-twitter-fill fs-16"></i></button>
                                             </div>
                                         </div>
                                     </form>
@@ -132,7 +198,8 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Already have an account ? <a href="auth-signin-basic.html" class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
+                            <p class="mb-0">Already have an account ? <a href="{{ route('login') }}"
+                                    class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
                         </div>
 
                     </div>
@@ -150,7 +217,10 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i>
+                                by Themesbrand
                             </p>
                         </div>
                     </div>
@@ -181,4 +251,5 @@
 
 
 <!-- Mirrored from themesbrand.com/velzon/html-2.5.0/default/auth-signup-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Apr 2025 03:03:12 GMT -->
+
 </html>

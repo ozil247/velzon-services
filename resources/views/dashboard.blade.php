@@ -1,617 +1,226 @@
-<!doctype html>
-<html lang="en" data-layout="vertical" data-layout-style="" data-layout-position=""  data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-layout-width="">
+@extends('layouts.navigation')
+@section('content')
+    
+        <div class="main-content">
 
+            <div class="page-content">
+                <div class="container-fluid">
 
-<!-- Mirrored from themesbrand.com/velzon/docs/laravel/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Apr 2025 23:51:50 GMT -->
-<head>
+                    <div class="row">
+                        <div class="col">
 
-    <meta charset="utf-8" />
-    <title>Introduction | Velzon Laravel - Admin & Dashboard Template Documentation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Velzon Laravel 9 Premium Multipurpose Admin & Dashboard Template Documentation" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico"> <!-- Layout config Js -->
-<script src="../assets/js/layout.js"></script>
-<!-- Bootstrap Css -->
-<link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-<!-- Icons Css -->
-<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-<!-- App Css-->
-<link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
-</head>
-
-<body>
-
-<!-- Begin page -->
-<div id="layout-wrapper">
-
-    <header id="page-topbar">
-    <div class="layout-width">
-        <div class="navbar-header">
-            <div class="d-flex">
-                <!-- LOGO -->
-                <div class="navbar-brand-box horizontal-logo">
-                    <a href="index.html" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="../assets/images/logo-dark.png" alt="" height="17">
-                        </span>
-                    </a>
-
-                    <a href="index.html" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="../assets/images/logo-light.png" alt="" height="17">
-                        </span>
-                    </a>
-                </div>
-
-                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
-                    <span class="hamburger-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
-
-                <div class="header-item ms-2">
-                    <div class="avatar-sm me-1 me-md-2 flex-shrink-0">
-                        <div class="avatar-title bg-white rounded-circle border">
-                            <img src="../assets/images/brand-logos/laravel.png" alt="" height="23">
-                        </div>
-                    </div>
-                    <span class="h5 mb-0">Laravel thisiafheio Docs</span>
-                </div>
-            </div>
-
-            <div class="d-flex align-items-center">
-
-                <div class="header-item me-1 me-md-3">
-                    <a href="https://1.envato.market/velzon-support" target="_blank" class="btn btn-success"><i class="ri-lifebuoy-line me-1 align-middle"></i> Support</a>
-                </div>
-
-                <div class="header-item">
-                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary"><i class="ri-shopping-basket-2-line me-1 align-middle"></i> Buy Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-    <!-- ========== App Menu ========== -->
-    <div class="app-menu navbar-menu">
-        <!-- LOGO -->
-        <div class="navbar-brand-box">
-            <!-- Dark Logo-->
-            <a href="index.html" class="logo logo-dark">
-                <span class="logo-sm">
-                    <img src="../assets/images/logo-sm.png" alt="" height="22">
-                </span>
-                <span class="logo-lg">
-                    <img src="../assets/images/logo-dark.png" alt="" height="17">
-                </span>
-            </a>
-            <!-- Light Logo-->
-            <a href="index.html" class="logo logo-light">
-                <span class="logo-sm">
-                    <img src="../assets/images/logo-sm.png" alt="" height="22">
-                </span>
-                <span class="logo-lg">
-                    <img src="../assets/images/logo-light.png" alt="" height="17"> <span
-                        class="badge badge-soft-danger fs-14 ms-1">LARAVEL</span>
-                </span>
-            </a>
-            <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
-                <i class="ri-record-circle-line"></i>
-            </button>
-        </div>
-
-        <div id="scrollbar">
-            <div class="container-fluid">
-
-                <ul class="navbar-nav" id="navbar-nav">
-                    <li class="menu-title"><span>Menu</span></li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="index.html">
-                            <i class="ri-honour-line"></i> <span>Introduction</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="folder-structure.html">
-                            <i class="ri-folder-2-line"></i> <span>Folder Structure</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="getting-started.html">
-                            <i class="ri-settings-6-line"></i> <span>Getting Started</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="#customization" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="customization">
-                            <i class="ri-equalizer-line"></i> <span>Customization</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="customization">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="css.html" class="nav-link">CSS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="scss.html" class="nav-link">SASS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript.html" class="nav-link">Javascript</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <!-- end Dashboard Menu -->
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="layout-setup.html">
-                            <i class="ri-code-line"></i> <span>Layout Setup</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="laravel-structure.html">
-                            <i class=" ri-contrast-2-fill"></i> <span>Create New Page</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="laravel-passport.html">
-                            <i class="bx bx-plug"></i> <span>Laravel Passport</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="laravel-acl.html">
-                            <i class="ri-code-box-line"></i> <span>Laravel ACL</span>
-                        </a>
-                    </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="starter-kit.html">
-                            <i class="ri-rocket-line"></i> <span>Starter Kit vs Full Admin</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="theme-setup.html">
-                            <i class="ri-paint-line"></i> <span>Theme Setup</span>
-                        </a>
-                    </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts">
-                            <i class="ri-layout-3-line"></i> <span>Layouts</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarLayouts">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="vertical.html" class="nav-link">Vertical</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="horizontal.html" class="nav-link">Horizontal</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="detached.html" class="nav-link">Detached</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="two-column.html" class="nav-link">Two Column</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="hovered.html" class="nav-link">Hovered</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="semibox.html" class="nav-link">Semibox</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="multi-language.html">
-                            <i class="ri-global-line"></i> <span>Multi Language</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="dark-mode.html">
-                            <i class="ri-contrast-2-line"></i> <span>Dark Mode</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="rtl.html">
-                            <i class="ri-layout-right-2-line"></i> <span>RTL Version</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="sources.html">
-                            <i class="ri-pantone-line"></i> <span>Sources & Credits</span>
-                        </a>
-                    </li>
-
-                    <!-- <li class="nav-item">
-                        <a class="nav-link menu-link" href="upgrade.html">
-                            <i class="ri-server-line"></i> <span>Upgrade</span>
-                        </a>
-                    </li> -->
-
-                    <!-- <li class="nav-item">
-                        <a class="nav-link menu-link" href="changelog.html">
-                            <i class="ri-draft-line"></i> <span>Change Log</span>
-                        </a>
-                    </li> -->
-
-                    <!-- <li class="nav-item">
-                        <a class="nav-link menu-link" href="github.html">
-                            <i class="ri-github-line"></i> <span>Github Access</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="">
-                            <i class="ri-discuss-line"></i> <span>Suggestions</span>
-                        </a>
-                    </li>-->
-
-                    <li class="menu-title"><i class="ri-more-fill"></i> <span>Components</span></li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="bootstrap-ui.html">
-                            <i class="ri-pencil-ruler-2-line"></i> <span>Bootstrap UI</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="icons.html">
-                            <i class="ri-compasses-2-line"></i> <span>Icons</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
-                            <i class="ri-stack-line"></i> <span>Advance UI</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="sweetalert2.html" class="nav-link">Sweetalert2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="sortablejs.html" class="nav-link">Sortablejs</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="simplebar.html" class="nav-link">Simplebar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="animation.html" class="nav-link">Aos Animation</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="shepherdjs-tour.html" class="nav-link">Shepherd Js - Tour</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="swiper-slider.html" class="nav-link">Swiper Slider</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="ratings.html" class="nav-link">Raterjs - Ratings</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="prismjs-highlight.html" class="nav-link">Prismjs - Highlight</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="glightbox.html" class="nav-link">Glightbox</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
-                            <i class="ri-file-list-3-line"></i> <span>Forms</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarForms">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="choices.html" class="nav-link">Choices</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="flatpickr.html" class="nav-link"> Flatpickr </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="colorpicker.html" class="nav-link">Pickr - Colorpicker</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="input-mask.html" class="nav-link"> Cleavejs - Input Mask</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="multi-js.html" class="nav-link">Multi Js</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="autocomplete.html" class="nav-link">Autocomplete</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="input-spin.html" class="nav-link"> Input Spin </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="nouislider.html" class="nav-link">Nouislider - Range</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="wizard.html" class="nav-link">Wizard</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="ckeditor.html" class="nav-link">Ckeditor</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="quilljs.html" class="nav-link">Quilljs Editor</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="dropzone.html" class="nav-link">Dropzone - File Uploads</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="filepond.html" class="nav-link">Filepond - File Uploads</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="select2.html" class="nav-link">Select 2</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
-                            <i class="ri-layout-grid-line"></i> <span>Tables</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarTables">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="gridjs.html" class="nav-link">Grid Js</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="listjs.html" class="nav-link">List Js</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="datatables.html" class="nav-link">Data Tables</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCharts">
-                            <i class="ri-pie-chart-line"></i> <span>Charts</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarCharts">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="apexcharts.html" class="nav-link"> Apexcharts </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="chartjs.html" class="nav-link"> Chartjs </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="echarts.html" class="nav-link"> Echarts </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
-                            <i class="ri-map-pin-line"></i> <span>Maps</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarMaps">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="google-maps.html" class="nav-link">
-                                        Google
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="jsvectormap.html" class="nav-link">
-                                        Jsvectormap
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="leaflet.html" class="nav-link">
-                                        Leaflet
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- Sidebar -->
-        </div>
-    </div>
-    <!-- Left Sidebar End -->
-    <!-- Vertical Overlay-->
-    <div class="vertical-overlay"></div>
-
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="main-content">
-
-        <div class="page-content">
-            <div class="container-fluid">
-
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Introduction</h4>
-
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Docs</a></li>
-                                    <li class="breadcrumb-item active">Introduction</li>
-                                </ol>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- end page title -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-
-                            <div class="card-body">
-                                <div class="alert alert-info" role="alert">
-                                    <b>Updates v4.0.0 (Big Update):</b> We are pleased to introduce a new all-encompassing layout system, which is fully powered by SASS. This innovative layout solution is entirely attribute-based, enabling you to seamlessly transition between various layouts by making attribute adjustments alone.
+                            <div class="h-100">
+                                <div class="row mb-3 pb-1">
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-lg-center flex-lg-row flex-column">
+                                            <div class="flex-grow-1">
+                                                <h4 class="fs-16 mb-1">Good Morning, Anna!</h4>
+                                                <p class="text-muted mb-0">Here's what's happening with your store today.</p>
+                                            </div>
+                                            <div class="mt-3 mt-lg-0">
+                                                <form action="javascript:void(0);">
+                                                    <div class="row g-3 mb-0 align-items-center">
+                                                        <div class="col-sm-auto">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control border-0 dash-filter-picker shadow" data-provider="flatpickr" data-range-date="true" data-date-format="d M, Y" data-deafult-date="01 Jan 2022 to 31 Jan 2022">
+                                                                <div class="input-group-text bg-primary border-primary text-white">
+                                                                    <i class="ri-calendar-2-line"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-auto">
+                                                            <button type="button" class="btn btn-soft-success"><i class="ri-add-circle-line align-middle me-1"></i> Add Product</button>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-auto">
+                                                            <button type="button" class="btn btn-soft-info btn-icon waves-effect waves-light layout-rightside-btn"><i class="ri-pulse-line"></i></button>
+                                                        </div>
+                                                        <!--end col-->
+                                                    </div>
+                                                    <!--end row-->
+                                                </form>
+                                            </div>
+                                        </div><!-- end card header -->
+                                    </div>
+                                    <!--end col-->
                                 </div>
-                                <div class="alert alert-success text-success">Thank you for purchasing <b>Velzon - Laravel 11 Admin Dashboard Template.</b></div>
-                                <div class="alert alert-danger text-danger">Velzon is available in Laravel version. Build with <b>Bootstrap 5.3.3, Laravel 11.x, Vite</b>.</div>
-                                <p><b>Velzon</b> is a fully responsive and premium <b>Bootstrap 5.3.3</b> and <b>Laravel 11*</b> Admin & Dashboard
-                                    Template. Whether you're creating a <b>Web App, Dashboards, Admin Panels, eCommerce
-                                        App, Crypto Admin, CRM, or SASS-based interface </b> then you are at the right
-                                    place to buy Velzon admin dashboard template. We have used <b>Vite based</b> build
-                                    tools and <b>scss variables-based</b> modes along with <b>RTL</b> supported. You can
-                                    quickly change the layout or mode by changing data attributes only instead of
-                                    changing huge lines of codes. We have written complete minimal code for the
-                                    beautiful UI. Velzon has 6 types of layouts <b> ( Vertical, Horizontal, Detached,
-                                        Two
-                                        Column, Semibox & Hovered )</b> with multiple options of layouts like <b>Fixed &
-                                        Scrollable</b>. Also
-                                    support <b>Dark, Light, and RTL</b> modes and many other options.</p>
-                                </p>
-                                <p><b>Velzon</b> - Laravel Admin Dashboard Template is easily customizable and developer-friendly codes. It will help your team moving faster and saving development costs and valuable time.</p>
+                                <!--end row-->
 
-                                <p><b>Velzon</b> offers a diverse selection of <b>11 unique themes</b>. Switching between themes is effortless, requiring just a <b>single click</b>, and there's no need to load additional SCSS files.</p>
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Total Earnings</p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <h5 class="text-success fs-14 mb-0">
+                                                            <i class="ri-arrow-right-up-line fs-13 align-middle"></i> +16.24 %
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="559.25">0</span>k </h4>
+                                                        <a href="#" class="text-decoration-underline">View net earnings</a>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-success-subtle rounded fs-3">
+                                                            <i class="bx bx-dollar-circle text-success"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end card body -->
+                                        </div><!-- end card -->
+                                    </div><!-- end col -->
+
+                                    <div class="col-xl-3 col-md-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Orders</p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <h5 class="text-danger fs-14 mb-0">
+                                                            <i class="ri-arrow-right-down-line fs-13 align-middle"></i> -3.57 %
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="36894">0</span></h4>
+                                                        <a href="#" class="text-decoration-underline">View all orders</a>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-info-subtle rounded fs-3">
+                                                            <i class="bx bx-shopping-bag text-info"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end card body -->
+                                        </div><!-- end card -->
+                                    </div><!-- end col -->
+
+                                    <div class="col-xl-3 col-md-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Customers</p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <h5 class="text-success fs-14 mb-0">
+                                                            <i class="ri-arrow-right-up-line fs-13 align-middle"></i> +29.08 %
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value" data-target="183.35">0</span>M </h4>
+                                                        <a href="#" class="text-decoration-underline">See details</a>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-warning-subtle rounded fs-3">
+                                                            <i class="bx bx-user-circle text-warning"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end card body -->
+                                        </div><!-- end card -->
+                                    </div><!-- end col -->
+
+                                    <div class="col-xl-3 col-md-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> My Balance</p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <h5 class="text-muted fs-14 mb-0">
+                                                            +0.00 %
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">$<span class="counter-value" data-target="165.89">0</span>k </h4>
+                                                        <a href="#" class="text-decoration-underline">Withdraw money</a>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-primary-subtle rounded fs-3">
+                                                            <i class="bx bx-wallet text-primary"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end card body -->
+                                        </div><!-- end card -->
+                                    </div><!-- end col -->
+                                </div> <!-- end row-->
+
+                               
+
                                 
-                                <p><b>Velzon</b> has 7 dashboards, 14+ apps that can be used in Analytics, CRM,
-                                    Ecommerce, Crypto, Project management, support or any other custom projects.</p>
 
-                                <p><b>Velzon</b> has 185+ pages, 40+ components, 30+ charts, 30+ widgets with fully
-                                    responsive design in Desktops, Tablets and Mobile devices.</p>
+                                <!-- end row-->
 
-                                <p class="alert alert-info text-info"><b>Velzon</b> updated the <b>Vite</b> config. Now Velzon users easily update and maintaining the dependencies.</p>
+                            </div> <!-- end .h-100-->
 
-                                <h6 class="fw-semibold fs-16 text-decoration-underline mt-4 mb-3">Featured Apps:</h6>
-                                <p class="text-muted fs-14">We have not fully provided working apps with database. Featured means working with the Javascript which help developer to move faster in building real web application.
-                                </p>
-                                <ul>
-                                    <li>Calendar</li>
-                                    <li>Chat</li>
-                                    <li>Mailbox</li>
-                                    <li>eCommerce</li>
-                                    <li>Projects</li>
-                                    <li>Tasks</li>
-                                    <li>CRM</li>
-                                    <li>Crypto</li>
-                                    <li>Invoices</li>
-                                    <li>Support Tickets</li>
-                                    <li>NFT Marketplace</li>
-                                    <li>File Manager</li>
-                                    <li>To Do</li>
-                                    <li>Job</li>
-                                    <li>API Key</li>
-                                </ul>
+                        </div> <!-- end col -->
 
-                                <h6 class="fw-semibold fs-16 text-decoration-underline mt-4 mb-3">Key Features:</h6>
-                                <ul>
-                                    <li>Build with Laravel 11.*</li>
-                                    <li>Build with Bootstrap v5.3.3</li>
-                                    <li>Laravel Vite Supported</li>
-                                    <li>Dark, Light with RTL Supported</li>
-                                    <li>Multiple Layouts</li>
-                                    <li>Fully Responsive Design</li>
-                                    <li>W3C Validated Code</li>
-                                    <li>Laravel Vite Based Workflow</li>
-                                    <li>Light-Weight Code</li>
-                                    <li>Easy to Customize with SCSS Variables</li>
-                                    <li>Lifetime Free Updates</li>
-                                    <li>Unlimited Template Possibilities</li>
-                                    <li>Calendar, Chat, Mailbox, eCommerce, Projects, Tasks, CRM, Crypto, Invoices & Support Tickets Apps</li>
-                                    <li>Authentication & Error Pages</li>
-                                    <li>Profile, Settings, Invoice, Coming soon, Maintenance, Timeline, Pricing, Gallery, FAQ and many more Pages</li>
-                                </ul>
+                        <!-- end col -->
+                    </div>
 
-                                <h6 class="fw-semibold fs-16 text-decoration-underline mt-4 mb-3">Layout Features:</h6>
-                                <ul>
-                                    <li>Vertical, Horizontal & Detached</li>
-                                    <li>Light & Dark Modes</li>
-                                    <li>Fluid & Boxed Width</li>
-                                    <li>Fixed & Scrollable Positions</li>
-                                    <li>Light & Dark Topbars</li>
-                                    <li>Default, Compact, Small Icon & Icon Hovered Sidebars</li>
-                                    <li>Light & Colored Sidebars</li>
-                                    <li>LTR & RTL supported</li>
-                                    <li>Preloader Option</li>
-                                </ul>
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
 
-                                <h6 class="fw-semibold fs-16 text-decoration-underline mt-4 mb-3">For Developers:</h6>
-                                <p class="text-muted fs-14">
-                                    You can boost your development with Velzon on 
-                                    <ul class="mb-0">
-                                        <li><a href="https://getbootstrap.com/" target="_blank"> Bootstrap</a></li>
-                                        <li><a href="https://laravel.com/docs/10.x/vite" target="_blank"> Laravel Vite</a></li>
-                                        <li><a href="https://www.npmjs.com/" target="_blank">Npm</a></li>
-                                        <li><a href="https://sass-lang.com/" target="_blank">SASS</a></li>
-                                    </ul>
-                                </p>
-
-                                <h6 class="fw-semibold fs-16 text-decoration-underline mt-4 mb-3">Browser Compatibility:
-                                </h6>
-
-                                <ul class="mb-0">
-                                    <li>Chrome (Windows, Mac, Linux)</li>
-                                    <li>Firefox (Windows, Mac, Linux)</li>
-                                    <li>Safari (Mac)</li>
-                                    <li>Microsoft Edge</li>
-                                    <li>And other WebKit browsers</li>
-                                </ul>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Velzon.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Design & Develop by Themesbrand
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- container-fluid -->
+            </footer>
         </div>
-        <!-- End Page-content -->
+        <!-- end main content-->
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> © Velzon.
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-sm-end d-none d-sm-block">
-                            Design & Develop by Themesbrand
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
-    <!-- end main content-->
-
-</div>
-<!-- END layout-wrapper -->
+    <!-- END layout-wrapper -->
 
 
 
-<!-- JAVASCRIPT -->
-<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/libs/simplebar/simplebar.min.js"></script>
-<script src="../assets/libs/node-waves/waves.min.js"></script>
-<script src="../assets/libs/feather-icons/feather.min.js"></script>
-<script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-<script src="../assets/libs/prismjs/prism.js"></script>
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
 
-<!-- App js -->
-<script src="../assets/js/app.js"></script>
-</body>
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
 
 
-<!-- Mirrored from themesbrand.com/velzon/docs/laravel/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Apr 2025 23:52:45 GMT -->
-</html>
+    <!-- Theme Settings -->
+   
+@endsection
