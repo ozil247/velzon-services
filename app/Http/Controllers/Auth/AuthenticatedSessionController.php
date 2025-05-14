@@ -14,7 +14,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): View
+    public function create(): View|RedirectResponse
     {
         return view('auth.login');
     }
@@ -25,6 +25,12 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
+
+        $user = Auth::user();
+        if($user->type !== 'admin'){
+            Auth::logout();
+            return redirect()->back()->withErrors(['message' => 'Access denied. Use the mobile app.']);
+        }
 
         $request->session()->regenerate();
 
